@@ -115,3 +115,10 @@ Please make sure to adhere to the project's coding standards and to include appr
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Changelog
+```mermaid 
+gitGraph
+    commit id:"INIT" type: HIGHLIGHT
+    commit id:"Clean-Up"
+```
