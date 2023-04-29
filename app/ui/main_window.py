@@ -1,4 +1,4 @@
-# app\ui\main_window.py
+''' app/ui/main_window.py '''
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QTextEdit
 from ..utils.config import AppConfig
@@ -9,17 +9,18 @@ from .widgets.treeview import TreeView
 
 
 class MainWindow(QMainWindow):
-    def init(self) -> None:
+    """
+    MainWindow
+
+    Args:
+        QMainWindow (QMainWindow): Inheritance
+    """
+
+    def __init__(self) -> None:
         """
         Initialize the Main-Window.
         """
-        super().init()
-        self.initUI()
-
-    def initUI(self) -> None:
-        """
-        Initialize the user interface.
-        """
+        super().__init__()
         # Window-Settings
         self.setWindowTitle(AppConfig.APP_NAME)
         self.setGeometry(100, 100, 800, 600)
@@ -30,10 +31,12 @@ class MainWindow(QMainWindow):
         central_widget.setLayout(layout)
 
         # Create Widgets
-        # TODO: #11 Move to method
-        self.create_treeview()
+        self.topbar = None
+        self.rightbar = None
+        self.treeview = self.create_treeview()
+        self.editbox = self.create_edit()
+
         self.create_toolbars()
-        self.create_edit()
 
         # Add Widgets to Window
         self.setMenuBar(MenuBar(self))
@@ -48,42 +51,44 @@ class MainWindow(QMainWindow):
         Creates and adds the top and right toolbars to the main window.
         """
         # Top Toolbar [PyQt6.QtWidgets.QToolBar]
-        self.topbar = ToolBar(self,
-                              orientation=Qt.Orientation.Horizontal,
-                              style=Qt.ToolButtonStyle.ToolButtonTextUnderIcon,
-                              icon_size=(24, 24))
+        self.topbar = ToolBar(self, orientation=Qt.Orientation.Horizontal,
+                              style=Qt.ToolButtonStyle.ToolButtonTextUnderIcon, icon_size=(24, 24))
 
         # Top Toolbar Buttons
-        self.topbar.add_button("Open", "resources/assets/icons/windows/imageres-10.ico", self.open_file)
-        self.topbar.add_button("Save", "resources/assets/icons/windows/shell32-259.ico", self.save_file)
+        self.topbar.add_button(
+            "Open", "resources/assets/icons/windows/imageres-10.ico", self.open_file)
+        self.topbar.add_button(
+            "Save", "resources/assets/icons/windows/shell32-259.ico", self.save_file)
         self.topbar.add_separator()
-        self.topbar.add_button("Exit", "resources/assets/icons/windows/shell32-220.ico", self.exit_app)
+        self.topbar.add_button(
+            "Exit", "resources/assets/icons/windows/shell32-220.ico", self.exit_app)
 
         # Right Toolbar [PyQt6.QtWidgets.QToolBar]
-        self.rightbar = ToolBar(self,
-                                orientation=Qt.Orientation.Vertical,
+        self.rightbar = ToolBar(self, orientation=Qt.Orientation.Vertical,
                                 style=Qt.ToolButtonStyle.ToolButtonIconOnly,
                                 icon_size=(24, 24))
 
         # Right Toolbar Buttons
         self.rightbar.add_separator()
-        self.rightbar.add_button("Privacy", "resources/assets/icons/windows/shell32-167.ico", self.privacy_window)
-        self.rightbar.add_button("Settings", "resources/assets/icons/windows/shell32-315.ico", self.settings_window)
+        self.rightbar.add_button(
+            "Privacy", "resources/assets/icons/windows/shell32-167.ico", self.privacy_window)
+        self.rightbar.add_button(
+            "Settings", "resources/assets/icons/windows/shell32-315.ico", self.settings_window)
 
         self.addToolBar(Qt.ToolBarArea.TopToolBarArea, self.topbar)
         self.addToolBar(Qt.ToolBarArea.RightToolBarArea, self.rightbar)
 
-    def create_treeview(self) -> None:
+    def create_treeview(self) -> TreeView:
         """
         Creates and adds the tree view widget to the main window.
         """
-        self.treeview = TreeView(self)
+        return TreeView(self)
 
-    def create_edit(self) -> None:
+    def create_edit(self) -> QTextEdit:
         """
         Creates and adds the QTextEdit widget to the main window.
         """
-        self.editbox = QTextEdit(self)
+        return QTextEdit(self)
 
     def open_file(self) -> None:
         """
@@ -103,12 +108,12 @@ class MainWindow(QMainWindow):
         """
         self.close()
 
-    def settings_window(self) -> None:  # TODO: #12 Implement "settings_window"
+    def settings_window(self) -> None:
         """
         Event handler for the "Settings" button. Displays the "Settings" window.
         """
 
-    def privacy_window(self) -> None:   # TODO: #13 Implement "privacy_window"
+    def privacy_window(self) -> None:
         """
         Event handler for the "Privacy" button. Displays the "Privacy" window.
         """
