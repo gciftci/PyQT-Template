@@ -12,3 +12,5 @@ class StatusBar(QStatusBar):
         """
         super().__init__(parent)
         self.showMessage("Ready")
+
+    # TODO: #7 Add update function.

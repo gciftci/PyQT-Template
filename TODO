@@ -1,0 +1,16 @@
+- Implement "app/ui/actions/actions.py" requires implementation.
+- Remove headers and unused cols
+- Move to method
+- Implement "settings_window"
+- Implement "privacy_window"
+- Create config parsing
+- Add proper scope
+- Implement "app\utils\logging.py"
+- Implement "app\utils\utils.py"
+- Create entries for "Help"
+- Create entries for "View"
+- Create entries for "Edit"
+- "app/ui/actions/dialog.py" requires implementation.
+- Add update function.
+- Add option to "stack" toolbars (2 TopToolbars)
+- Add layout-method.

@@ -30,6 +30,7 @@ class MainWindow(QMainWindow):
         central_widget.setLayout(layout)
 
         # Create Widgets
+        # TODO: #11 Move to method
         self.create_treeview()
         self.create_toolbars()
         self.create_edit()
@@ -102,12 +103,12 @@ class MainWindow(QMainWindow):
         """
         self.close()
 
-    def settings_window(self) -> None:
+    def settings_window(self) -> None:  # TODO: #12 Implement "settings_window"
         """
         Event handler for the "Settings" button. Displays the "Settings" window.
         """
 
-    def privacy_window(self) -> None:
+    def privacy_window(self) -> None:   # TODO: #13 Implement "privacy_window"
         """
         Event handler for the "Privacy" button. Displays the "Privacy" window.
         """

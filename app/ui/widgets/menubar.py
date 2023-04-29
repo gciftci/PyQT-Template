@@ -12,9 +12,9 @@ class MenuBar(QMenuBar):
         """
         super().__init__(parent)
         file_menu = self.addMenu("File")
-        edit_menu = self.addMenu("Edit")
-        view_menu = self.addMenu("View")
-        help_menu = self.addMenu("Help")
+        # edit_menu = self.addMenu("Edit")    # TODO: #5 Create entries for "Edit"
+        # view_menu = self.addMenu("View")    # TODO: #4 Create entries for "View"
+        # help_menu = self.addMenu("Help")    # TODO: #3 Create entries for "Help"
 
         # Add actions to the menus
         file_menu.addAction(self.parent().topbar.actions["Open"])

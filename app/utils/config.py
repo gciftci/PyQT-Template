@@ -11,3 +11,8 @@ class AppConfig:
         - Loading settings from a file
         """
         pass
+
+    '''
+        TODO: #14 Create config parsing
+        TODO: #15 Add proper scope
+    '''

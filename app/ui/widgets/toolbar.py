@@ -45,3 +45,8 @@ class ToolBar(QToolBar):
         separator = QWidget(self)
         separator.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.addWidget(separator)
+
+    '''
+        TODO: #8 Add option to "stack" toolbars (2 TopToolbars)
+        TODO: #9 Add layout-method.
+    '''

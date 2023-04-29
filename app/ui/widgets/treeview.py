@@ -20,3 +20,5 @@ class TreeView(QTreeView):
         self.setColumnWidth(0, 100)
         self.setFixedWidth(150)
         self.setSortingEnabled(True)
+
+        # TODO: #10 Remove headers and unused cols
