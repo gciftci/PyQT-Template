@@ -24,4 +24,4 @@ jobs:
       uses: fylein/python-pylint-github-action@v1
       with:
         args: --rcfile=.pylintrc
-        run: pylint --rcfile='.pylintrc' $(git ls-files '*.py')
+        run: pylint $(--rcfile=.pylintrc) $(git ls-files '*.py')
