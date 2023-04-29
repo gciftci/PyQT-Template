@@ -3,11 +3,14 @@ from PyQt6.QtWidgets import QMenuBar
 
 
 class MenuBar(QMenuBar):
-    def __init__(self, parent):
-        super().__init__(parent)
+    def __init__(self, parent=None) -> None:
         """
         Initialize the menu bar.
+
+        Args:
+            parent: The parent widget.
         """
+        super().__init__(parent)
         file_menu = self.addMenu("File")
         edit_menu = self.addMenu("Edit")
         view_menu = self.addMenu("View")

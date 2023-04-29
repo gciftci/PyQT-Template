@@ -7,18 +7,14 @@ from .utils.config import AppConfig
 
 def run() -> int:
     """
-    Initialize and run the application.
+    Initializes the application and runs it.
 
     Returns:
-        int: Exit status code.
+        int: The exit status code.
     """
-    app = QApplication(sys.argv)
+    app: QApplication = QApplication(sys.argv)
     AppConfig.initialize()
 
-    window = MainWindow()
+    window: MainWindow = MainWindow()
     window.show()
     return sys.exit(app.exec())
-
-
-if __name__ == "__main__":
-    run()

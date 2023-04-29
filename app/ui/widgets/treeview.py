@@ -1,16 +1,19 @@
 # app\ui\widgets\treeview.py
 from PyQt6.QtWidgets import QTreeView
 from PyQt6.QtGui import QFileSystemModel
-from PyQt6.QtCore import QDir, QSize
+from PyQt6.QtCore import QDir
 
 
 class TreeView(QTreeView):
     def __init__(self, parent=None):
+        """
+        Initialize the TreeView widget.
+
+        Args:
+            parent (QWidget, optional): Parent widget of the TreeView. Defaults to None.
+        """
         super().__init__(parent)
-        """
-        Initialize the Treeview.
-        """
-        self.file_system_model = QFileSystemModel()
+        self.file_system_model: QFileSystemModel = QFileSystemModel()
         self.file_system_model.setRootPath(QDir.currentPath())
         self.setModel(self.file_system_model)
         self.setRootIndex(self.file_system_model.index(QDir.currentPath()))
