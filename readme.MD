@@ -121,4 +121,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 gitGraph
     commit id:"INIT" type: HIGHLIGHT
     commit id:"Clean-Up"
+    commit
+    commit
+    commit
+    commit
 ```
