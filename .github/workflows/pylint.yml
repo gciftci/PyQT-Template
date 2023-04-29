@@ -20,5 +20,8 @@ jobs:
         pip install -r requirements.txt
         pip install pylint
     - name: Analysing the code with pylint
-      run: |
-        pylint --rcfile=.pylintrc $(git ls-files '*.py')
+    - name: Python Pylin GitHub Action
+      uses: fylein/python-pylint-github-action@v1
+      with:
+        args: pylint --rcfile=.pylintrc .
+        run: pylint --rcfile=.pylintrc $(git ls-files '*.py')
