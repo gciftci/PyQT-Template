@@ -1,1 +1,15 @@
-PyQt6
+astroid==2.15.4
+colorama==0.4.6
+dill==0.3.6
+isort==5.12.0
+lazy-object-proxy==1.9.0
+mccabe==0.7.0
+platformdirs==3.5.0
+pylint==2.17.3
+PyQt6==6.5.0
+PyQt6-Qt6==6.5.0
+PyQt6-sip==13.5.1
+tomli==2.0.1
+tomlkit==0.11.8
+typing_extensions==4.5.0
+wrapt==1.15.0
