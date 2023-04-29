@@ -31,8 +31,6 @@ class MainWindow(QMainWindow):
         central_widget.setLayout(layout)
 
         # Create Widgets
-        self.topbar = None
-        self.rightbar = None
         self.treeview = self.create_treeview()
         self.editbox = self.create_edit()
 

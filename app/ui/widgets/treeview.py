@@ -21,3 +21,9 @@ class TreeView(QTreeView):
         self.setColumnWidth(0, 100)
         self.setFixedWidth(150)
         self.setSortingEnabled(True)
+
+    def clear_view(self) -> None:
+        """
+        Clearing the TreeView
+        """
+        self.destroy(destroySubWindows=True)
